@@ -1,4 +1,4 @@
-# 📼 mircrotar
+# 📼 microtar
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
@@ -23,16 +23,16 @@ Install package:
 
 ```sh
 # npm
-npm install mircrotar
+npm install microtar
 
 # yarn
-yarn add mircrotar
+yarn add microtar
 
 # pnpm
-pnpm install mircrotar
+pnpm install microtar
 
 # bun
-bun install mircrotar
+bun install microtar
 ```
 
 Import:
@@ -45,10 +45,10 @@ import {
   createTarGzipStream,
   parseTar,
   parseTarGzip,
-} from "mircrotar";
+} from "microtar";
 
 // CommonJS
-const { createTar } = require("mircrotar");
+const { createTar } = require("microtar");
 ```
 
 ## Creating a tar archive
@@ -75,7 +75,7 @@ Possible attributes are:
 **Example:**
 
 ```ts
-import { createTar } from "mircrotar";
+import { createTar } from "microtar";
 
 const data = createTar(
   [
@@ -94,7 +94,7 @@ const data = createTar(
 You can optionaly use `createTarGzip` or `createTarGzipStream` to create a compressed tar data stream (returned value is a [`Promise<Uint8Array>`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array) or [`RedableStream`](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream) piped to [`CompressionStream`](https://developer.mozilla.org/en-US/docs/Web/API/CompressionStream))
 
 ```js
-import { createTarGzip, createTarGzipStream } from "mircrotar";
+import { createTarGzip, createTarGzipStream } from "microtar";
 
 createTarGzip([]); // Promise<Uint8Array>
 
@@ -108,7 +108,7 @@ Easily parse a tar archive using `parseTar` utility.
 **Example:**
 
 ```ts
-import { parseTar } from "mircrotar";
+import { parseTar } from "microtar";
 
 // Read tar data from file or other sources into an ArrayBuffer or Uint8Array
 
@@ -143,7 +143,7 @@ Parsed files array has two additional properties: `size` file size and `text`, a
 If input is compressed, you can use `parseTarGzip` utility instead to parse it (it used [`DecompressionStream`](https://developer.mozilla.org/en-US/docs/Web/API/DecompressionStream) internally and return a `Promise<Uint8Array>` value)
 
 ```js
-import { parseTarGzip } from "mircrotar";
+import { parseTarGzip } from "microtar";
 
 parseTarGzip(data); // Promise<Uint8Array>
 ```
@@ -166,11 +166,11 @@ Published under the [MIT License](./LICENSE).
 
 <!-- Badges -->
 
-[npm-version-src]: https://img.shields.io/npm/v/mircrotar?style=flat&colorA=18181B&colorB=F0DB4F
-[npm-version-href]: https://npmjs.com/package/mircrotar
-[npm-downloads-src]: https://img.shields.io/npm/dm/mircrotar?style=flat&colorA=18181B&colorB=F0DB4F
-[npm-downloads-href]: https://npmjs.com/package/mircrotar
-[codecov-src]: https://img.shields.io/codecov/c/gh/unjs/mircrotar/main?style=flat&colorA=18181B&colorB=F0DB4F
-[codecov-href]: https://codecov.io/gh/unjs/mircrotar
-[bundle-src]: https://img.shields.io/bundlephobia/minzip/mircrotar?style=flat&colorA=18181B&colorB=F0DB4F
-[bundle-href]: https://bundlephobia.com/result?p=mircrotar
+[npm-version-src]: https://img.shields.io/npm/v/microtar?style=flat&colorA=18181B&colorB=F0DB4F
+[npm-version-href]: https://npmjs.com/package/microtar
+[npm-downloads-src]: https://img.shields.io/npm/dm/microtar?style=flat&colorA=18181B&colorB=F0DB4F
+[npm-downloads-href]: https://npmjs.com/package/microtar
+[codecov-src]: https://img.shields.io/codecov/c/gh/unjs/microtar/main?style=flat&colorA=18181B&colorB=F0DB4F
+[codecov-href]: https://codecov.io/gh/unjs/microtar
+[bundle-src]: https://img.shields.io/bundlephobia/minzip/microtar?style=flat&colorA=18181B&colorB=F0DB4F
+[bundle-href]: https://bundlephobia.com/result?p=microtar
